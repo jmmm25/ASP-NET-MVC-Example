@@ -9,12 +9,12 @@ namespace Application.Controllers
     public class BoardController : Controller
     {
         // GET: Board
-        public string List(int? Id)
+        public ActionResult List(int? Id)
         {
             if (Id == null)
-                return "Error Message #1";
+                return Content("Error Message #1");
 
-            return "Board Id : " + Id.Value;
+            return View();
         }
     }
 }
