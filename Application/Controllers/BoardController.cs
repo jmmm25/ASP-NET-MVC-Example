@@ -12,11 +12,17 @@ namespace Application.Controllers
         // GET: Board
         public ActionResult List(int? Id)
         {
-            if (Id == null)
-                return Content("Error Message #1");
-
             DocumentActs documentActs = new DocumentActs();
+            MemberActs memberActs = new MemberActs();
+        
             var documents = documentActs.GetDocuments();
+            var member = memberActs.GetMember(1);
+
+            // ViewBag 사용법
+            // ViewBag.Member = member;
+
+            // ViewData 사용법
+            ViewData["Member"] = member;
 
             return View(documents);
         }

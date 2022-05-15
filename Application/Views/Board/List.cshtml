@@ -2,6 +2,9 @@
 
 @{
     Layout = null;
+    
+    // ViewData 사용법
+    var member = ViewData["Member"] as Application.Models.Member;
 }
 
 <!DOCTYPE html>
@@ -13,6 +16,10 @@
 </head>
 <body>
     <div> 
+        <p>
+            @*ViewBag, ViewData 동일*@
+            @ViewBag.Member.Name 님 환영합니다.
+        </p>
         <table>
             <thead>
                 <tr>
