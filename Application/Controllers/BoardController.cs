@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Application.Models;
 
 namespace Application.Controllers
 {
@@ -14,7 +15,10 @@ namespace Application.Controllers
             if (Id == null)
                 return Content("Error Message #1");
 
-            return View();
+            DocumentActs documentActs = new DocumentActs();
+            var documents = documentActs.GetDocuments();
+
+            return View(documents);
         }
     }
 }
