@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Application.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,22 @@ namespace Application.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        public string Index()
+        public ActionResult Index()
         {
-            return "My First Application!";
+            //ViewBag.Arr = new string[]
+            //{
+            //    "alpha",
+            //    "beta",
+            //    "gamma"
+            //};
+
+            ViewBag.Book = new Book
+            {
+                Title = "칼의 노래",
+                Writer = "김훈"
+            };
+
+            return View();
         }
     }
 }
